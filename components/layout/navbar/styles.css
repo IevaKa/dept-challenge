@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer components {
+  .nav-padding {
+    @apply w-full py-5 px-4 lg:py-[45px] lg:px-[55px];
+  }
+}
