@@ -13,7 +13,7 @@ export enum routeLabels {
   TERMS_AND_CONDITIONS = "Terms and conditions",
 }
 
-export const routes = [
+export const mainMenuRoutes = [
   { route: "/", label: routeLabels.HOME },
   { route: "/work", label: routeLabels.WORK },
   { route: "/culture", label: routeLabels.CULTURE },
@@ -24,6 +24,11 @@ export const routes = [
   { route: "/events", label: routeLabels.EVENTS },
   { route: "/contact", label: routeLabels.CONTACT },
   { route: "/insights", label: routeLabels.INSIGHTS },
-  { route: "/about", label: routeLabels.ABOUT },
-  { route: "/terms-and-conditions", label: routeLabels.TERMS_AND_CONDITIONS },
 ];
+
+export const termsAndConditionsRoute = {
+  route: "/terms-and-conditions",
+  label: routeLabels.TERMS_AND_CONDITIONS,
+};
+
+export const aboutRoute = { route: "/about", label: routeLabels.ABOUT };

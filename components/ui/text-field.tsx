@@ -13,7 +13,9 @@ export default function TextField({ name, rows = 1, className = "" }: Props) {
 
   return (
     <div className={`${className} pb-5 relative text-sm-2`}>
-      <label className="block uppercase">{name}</label>
+      <label htmlFor={name} className="block uppercase">
+        {name}
+      </label>
       <Controller
         control={control}
         name={name}
@@ -23,6 +25,7 @@ export default function TextField({ name, rows = 1, className = "" }: Props) {
               {...field}
               className="w-full border-b-1 border-gray-300 focus:outline-none focus:border-blue-500 py-1 resize-none"
               rows={rows}
+              id={name}
             />
             {fieldState?.error && (
               <p className="text-error absolute bottom-0">

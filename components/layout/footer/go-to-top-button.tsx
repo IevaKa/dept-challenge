@@ -14,7 +14,7 @@ export default function GoToTopButton() {
     <IconButton handleOnClick={goToTop}>
       <Image
         src="/arrow-up.svg"
-        alt="Logo"
+        alt="arrow-up"
         width={18}
         height={36}
         className="mb-4"

@@ -1,4 +1,9 @@
-import { routeLabels, routes } from "@/constants";
+import {
+  routeLabels,
+  mainMenuRoutes,
+  aboutRoute,
+  termsAndConditionsRoute,
+} from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 import GoToTopButton from "./go-to-top-button";
@@ -13,8 +18,11 @@ const selectedRoutes = [
   routeLabels.CONTACT,
 ];
 
-const shownRoutes = routes.filter((route) =>
-  selectedRoutes.includes(route.label)
+const relevantRoutes = [...mainMenuRoutes, aboutRoute];
+
+const shownRoutes = selectedRoutes.map(
+  (selectedRoute) =>
+    relevantRoutes.find(({ label }) => selectedRoute === label)!
 );
 
 export default function Footer() {
@@ -53,11 +61,11 @@ export default function Footer() {
               <p>Chamber of Commerce: 63464101</p>
               <p>VAT: NL 8552.47.502.B01</p>
               <Link
-                key={routes[11].label}
-                href={routes[11].label}
+                key={termsAndConditionsRoute.label}
+                href={termsAndConditionsRoute.label}
                 className="hover:underline"
               >
-                {routes[11].label}
+                {termsAndConditionsRoute.label}
               </Link>
             </div>
             <p>© 2022 Dept Agency</p>

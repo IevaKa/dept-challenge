@@ -17,7 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
+      <meta
+        name="description"
+        content="A selection of projects that pioneer tech and marketing to help brands stay ahead."
+      />
+      <body className={`${montserrat.className} relative`}>
         <Navbar />
         {children}
       </body>

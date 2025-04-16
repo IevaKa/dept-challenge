@@ -5,7 +5,8 @@ import { useState } from "react";
 import Logo from "./logo";
 import ExpandedMenu from "./expanded-menu";
 import "./styles.css";
-import { routes, routeLabels } from "@/constants";
+import { mainMenuRoutes, routeLabels } from "@/constants";
+import IconButton from "@/components/ui/icon-button";
 
 const selectedRoutes = [
   routeLabels.WORK,
@@ -16,7 +17,7 @@ const selectedRoutes = [
   routeLabels.CONTACT,
 ];
 
-const shownRoutes = routes.filter((route) =>
+const shownRoutes = mainMenuRoutes.filter((route) =>
   selectedRoutes.includes(route.label)
 );
 
@@ -47,11 +48,9 @@ export default function Navbar() {
               {label}
             </Link>
           ))}
-
-          <EllipsisHorizontalIcon
-            className="size-8 cursor-pointer"
-            onClick={openMenu}
-          />
+          <IconButton handleOnClick={openMenu}>
+            <EllipsisHorizontalIcon className="size-8 cursor-pointer" />
+          </IconButton>
         </div>
         <div className="lg:hidden uppercase" onClick={openMenu}>
           Menu

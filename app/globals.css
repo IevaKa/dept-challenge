@@ -25,6 +25,12 @@
   }
 }
 
+@layer utilities {
+  .section-padding {
+    @apply px-4 py-6 md:py-12 md:px-9 lg:py-21 lg:px-14;
+  }
+}
+
 @layer components {
   .contrast-section {
     @apply bg-white text-black lg:bg-background lg:text-white;
