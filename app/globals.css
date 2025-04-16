@@ -2,12 +2,27 @@
 
 :root {
   --background: #121212;
-  --border-color: #a3a3a3;
+  --border-color: #808080;
+  --error-color: #ff2929;
+  --purple-color: #5115f7;
+  --text-sm: 14px;
+  --text-sm-2: 16px;
+  --text-md: 18px;
+  --text-lg: 34px;
+  --text-xl: 60px;
 }
 
 @theme {
   --color-background: var(--background);
   --color-grey: var(--border-color);
+  --color-purple: var(--purple-color);
+  --color-error: var(--error-color);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-white;
+  }
 }
 
 @layer components {

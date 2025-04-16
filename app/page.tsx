@@ -1,13 +1,13 @@
-import Image from "next/image";
+import Footer from "@/components/layout/footer";
 import ClientsSection from "./components/clients-section";
+import QuestionSection from "./components/question-section";
 
 export default function Home() {
   return (
-    <div>
-      <main style={{ height: "5000px", backgroundColor: "red" }}>
-        <ClientsSection />
-        shdkjdkj
-      </main>
-    </div>
+    <main>
+      <ClientsSection />
+      <QuestionSection />
+      <Footer />
+    </main>
   );
 }

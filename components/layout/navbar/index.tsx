@@ -42,7 +42,7 @@ export default function Navbar() {
             <Link
               key={label}
               href={route}
-              className="font-normal text-[14px] xl:text-[18px] uppercase hover:underline"
+              className="text-sm xl:text-md uppercase hover:underline"
             >
               {label}
             </Link>

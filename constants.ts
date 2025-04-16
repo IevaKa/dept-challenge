@@ -1,6 +1,7 @@
 export enum routeLabels {
   HOME = "home",
   WORK = "work",
+  ABOUT = "about",
   CULTURE = "culture",
   SERVICES = "services",
   PARTNERS = "partners",
@@ -9,6 +10,7 @@ export enum routeLabels {
   EVENTS = "events",
   CONTACT = "contact",
   INSIGHTS = "insights",
+  TERMS_AND_CONDITIONS = "Terms and conditions",
 }
 
 export const routes = [
@@ -22,4 +24,6 @@ export const routes = [
   { route: "/events", label: routeLabels.EVENTS },
   { route: "/contact", label: routeLabels.CONTACT },
   { route: "/insights", label: routeLabels.INSIGHTS },
+  { route: "/about", label: routeLabels.ABOUT },
+  { route: "/terms-and-conditions", label: routeLabels.TERMS_AND_CONDITIONS },
 ];

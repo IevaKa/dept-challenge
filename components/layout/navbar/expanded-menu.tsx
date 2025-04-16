@@ -35,7 +35,7 @@ export default function ExpandedMenu({ visible, closeMenu }: Props) {
     <div
       className={`w-full h-screen ${
         visible ? "opacity-100" : "opacity-0 pointer-events-none"
-      } absolute top-0 left-0 flex flex-col bg-background text-white transition-opacity duration-500`}
+      } absolute top-0 left-0 flex flex-col bg-background transition-opacity duration-500  text-white`}
     >
       <div className={`nav-padding flex flex-col h-screen relative`}>
         <div className="flex justify-between mt-1 mb-[53px]">
@@ -52,7 +52,7 @@ export default function ExpandedMenu({ visible, closeMenu }: Props) {
               key={label}
               href={route}
               onClick={closeMenu}
-              className="w-full flex justify-end items-center font-normal text-[34px] lg:text-[60px] uppercase border-b border-grey"
+              className="w-full flex justify-end items-center text-lg lg:text-xl uppercase border-b border-grey"
             >
               <div
                 className={`${navigatorVisibilityClass(
