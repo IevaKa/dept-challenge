@@ -24,10 +24,7 @@ export default function QuestionSection() {
     },
   });
 
-  const {
-    handleSubmit,
-    formState: { errors },
-  } = methods;
+  const { handleSubmit } = methods;
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
     console.log(data);

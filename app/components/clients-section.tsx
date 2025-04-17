@@ -34,7 +34,7 @@ export default function ClientsSection() {
         challenge and inspire them to reach for the stars.
       </p>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-y-16 gap-x-30 lg:gap-x-4 lg:gap-y-15 place-items-center">
-        {sortedLogos.map(({ src }, i) => (
+        {sortedLogos.map(({ src }) => (
           <div
             key={src}
             className="w-[115px] h-[60px] md:w-[172px] md:h-[90px]"
