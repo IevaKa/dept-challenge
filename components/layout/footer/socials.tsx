@@ -14,10 +14,10 @@ export default function Socials({ className = "" }: Props) {
   };
 
   return (
-    <div className={`flex flex-col lg:flex-row gap-[36px] ${className}`}>
+    <div className={`flex flex-col lg:flex-row gap-9 ${className}`}>
       <IconButton handleOnClick={goToSocialPage("facebook")}>
         <Image
-          src="/facebook-logo.svg"
+          src="/logos/facebook.svg"
           alt="facebook-logo"
           height={25}
           width={14}
@@ -25,7 +25,7 @@ export default function Socials({ className = "" }: Props) {
       </IconButton>
       <IconButton handleOnClick={goToSocialPage("twitter")}>
         <Image
-          src="/twitter-logo.svg"
+          src="/logos/twitter.svg"
           alt="twitter-logo"
           height={20}
           width={25}
@@ -33,7 +33,7 @@ export default function Socials({ className = "" }: Props) {
       </IconButton>
       <IconButton handleOnClick={goToSocialPage("instagram")}>
         <Image
-          src="/instagram-logo.svg"
+          src="/logos/instagram.svg"
           alt="instagram-logo"
           height={27}
           width={27}

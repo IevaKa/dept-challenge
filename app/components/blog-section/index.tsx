@@ -2,10 +2,33 @@ import React from "react";
 import BlogPostCard from "./blog-post-card";
 import { BlogPost } from "@/types";
 import BlogPostListing from "./blog-post-listing";
-import Testimonial from "./testimonial";
 import { chunkArray } from "@/utils";
+import Testimonial from "./testimonial";
 
-const BlogCards = ({ posts }: { posts: BlogPost[] }) => {
+const BlogCardsList = ({
+  posts,
+  colSpan = "col-span-3",
+}: {
+  posts: BlogPost[];
+  colSpan?: string;
+}) => {
+  if (!posts.filter(Boolean).length) return null;
+
+  return (
+    <div className="contents">
+      {posts.map((post, idx) => (
+        <div
+          key={idx}
+          className={`flex justify-center items-center ${colSpan}`}
+        >
+          <BlogPostCard post={post} />
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const BlogList = ({ posts }: { posts: BlogPost[] }) => {
   if (!posts.length) return null;
 
   return (
@@ -14,33 +37,10 @@ const BlogCards = ({ posts }: { posts: BlogPost[] }) => {
         <BlogPostListing
           key={idx}
           post={post}
-          withBorder={idx !== posts.length - 1}
+          withBorder={!(posts.length === idx + 1)}
         />
       ))}
     </div>
-  );
-};
-
-const BlogList = ({
-  posts,
-  colSpan = 3,
-}: {
-  posts: BlogPost[];
-  colSpan?: number;
-}) => {
-  if (!posts.length) return null;
-
-  return (
-    <>
-      {posts.map((post, idx) => (
-        <div
-          key={idx}
-          className={`flex justify-center items-center col-span-${colSpan}`}
-        >
-          <BlogPostCard post={post} />
-        </div>
-      ))}
-    </>
   );
 };
 
@@ -52,13 +52,13 @@ export default function BlogSection({ posts }: { posts: BlogPost[] }) {
       {chunks.map((chunk, i) => (
         <React.Fragment key={i}>
           <div className="grid grid-cols-1 lg:grid-cols-6 auto-rows-[568px]">
-            <BlogList posts={chunk.slice(0, 4)} />
-            <BlogList posts={chunk.slice(4, 5)} colSpan={4} />
-            <BlogCards posts={chunk.slice(5, 8)} />
-            <BlogList posts={chunk.slice(8, 10)} />
-            <BlogCards posts={chunk.slice(10, 13)} />
-            <BlogList posts={chunk.slice(13, 14)} colSpan={4} />
-            <BlogList posts={chunk.slice(14, 18)} />
+            <BlogCardsList posts={chunk.slice(0, 4)} />
+            <BlogCardsList posts={[chunk[4]]} colSpan="col-span-4" />
+            <BlogList posts={chunk.slice(5, 8)} />
+            <BlogCardsList posts={chunk.slice(8, 10)} />
+            <BlogList posts={chunk.slice(10, 13)} />
+            <BlogCardsList posts={[chunk[13]]} colSpan="col-span-4" />
+            <BlogCardsList posts={chunk.slice(14, 18)} />
           </div>
           {chunk.length === 18 && <Testimonial />}
         </React.Fragment>

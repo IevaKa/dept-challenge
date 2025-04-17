@@ -7,18 +7,18 @@ export default function ClientsSection() {
   const isMobile = useIsMobile();
 
   const logos = [
-    { src: "/google-logo.svg", mobileOrder: 1, desktopOrder: 1 },
-    { src: "/levi-logo.svg", mobileOrder: 2, desktopOrder: 2 },
-    { src: "/netflix-logo.svg", mobileOrder: 10, desktopOrder: 3 },
-    { src: "/spotify-logo.svg", mobileOrder: 3, desktopOrder: 4 },
-    { src: "/patagonia-logo.svg", mobileOrder: 4, desktopOrder: 5 },
-    { src: "/fujitsu-logo.svg", mobileOrder: 12, desktopOrder: 6 },
-    { src: "/adyen-logo.svg", mobileOrder: 5, desktopOrder: 7 },
-    { src: "/audi-logo.svg", mobileOrder: 6, desktopOrder: 8 },
-    { src: "/triumph-logo.svg", mobileOrder: 9, desktopOrder: 9 },
-    { src: "/tesla-logo.svg", mobileOrder: 7, desktopOrder: 10 },
-    { src: "/asos-logo.svg", mobileOrder: 8, desktopOrder: 11 },
-    { src: "/takeaway-logo.svg", mobileOrder: 11, desktopOrder: 12 },
+    { src: "/logos/google.svg", mobileOrder: 1, desktopOrder: 1 },
+    { src: "/logos/levi.svg", mobileOrder: 2, desktopOrder: 2 },
+    { src: "/logos/netflix.svg", mobileOrder: 10, desktopOrder: 3 },
+    { src: "/logos/spotify.svg", mobileOrder: 3, desktopOrder: 4 },
+    { src: "/logos/patagonia.svg", mobileOrder: 4, desktopOrder: 5 },
+    { src: "/logos/fujitsu.svg", mobileOrder: 12, desktopOrder: 6 },
+    { src: "/logos/adyen.svg", mobileOrder: 5, desktopOrder: 7 },
+    { src: "/logos/audi.svg", mobileOrder: 6, desktopOrder: 8 },
+    { src: "/logos/triumph.svg", mobileOrder: 9, desktopOrder: 9 },
+    { src: "/logos/tesla.svg", mobileOrder: 7, desktopOrder: 10 },
+    { src: "/logos/asos.svg", mobileOrder: 8, desktopOrder: 11 },
+    { src: "/logos/takeaway.svg", mobileOrder: 11, desktopOrder: 12 },
   ];
 
   const sortedLogos = [...logos].sort((a, b) =>

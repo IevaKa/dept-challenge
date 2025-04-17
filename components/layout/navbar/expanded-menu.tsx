@@ -3,10 +3,10 @@
 import Link from "next/link";
 import Logo from "./logo";
 import { mainMenuRoutes } from "@/constants";
-import { XMarkIcon } from "@heroicons/react/24/solid";
 import React, { useEffect } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import IconButton from "@/components/ui/icon-button";
 
 type Props = {
   visible: boolean;
@@ -39,11 +39,16 @@ export default function ExpandedMenu({ visible, closeMenu }: Props) {
     <div className="w-full h-full flex flex-col absolute top-0 left-0 bg-background transition-opacity duration-500 text-white z-50">
       <div className="nav-padding flex flex-col h-screen relative">
         <div className="flex justify-between mt-1 mb-[53px]">
-          <Logo src="/logo-white.svg" />
-          <XMarkIcon
-            className="size-4 lg:size-8 cursor-pointer"
-            onClick={closeMenu}
-          />
+          <Logo src="/logos/dept-white.svg" />
+          <IconButton handleOnClick={closeMenu}>
+            <Image
+              src="/icons/close.svg"
+              alt=""
+              width={17}
+              height={17}
+              className="mr-2 w-auto h-auto"
+            />
+          </IconButton>
         </div>
 
         <div className="flex flex-col items-end flex-1 overflow-auto">
@@ -60,7 +65,7 @@ export default function ExpandedMenu({ visible, closeMenu }: Props) {
                 )} relative w-[15px] h-[18px] lg:w-[22px] lg:h-[25px] mr-4`}
               >
                 <Image
-                  src="/nav-indicator.svg"
+                  src="/icons/nav-indicator.svg"
                   alt="nav-indicator"
                   fill
                   className="object-contain"

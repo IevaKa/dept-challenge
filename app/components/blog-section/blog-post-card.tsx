@@ -14,8 +14,10 @@ export default function BlogPostCard({ post }: { post: BlogPost }) {
       <Image
         src={image}
         alt={image}
-        layout="fill"
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         className="object-cover z-0"
+        loading="lazy"
       />
     </div>
   );

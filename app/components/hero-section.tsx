@@ -9,8 +9,7 @@ export default function HeroSection() {
         fill
         priority
         className="object-cover w-full"
-        placeholder="blur"
-        blurDataURL="/images/hero-blur.jpg"
+        loading="eager"
       />
       <div className="z-5">
         <p className="uppercase text-sm-2 pb-8">Work</p>

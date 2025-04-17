@@ -32,7 +32,7 @@ export default function Footer() {
         <div className="xl:h-1/2 w-full border-b border-gray-600 pb-[45px] xl:pb-[83px]">
           <div className="flex sm:items-start md:justify-between lg:justify-start">
             <Image
-              src="/logo-white.svg"
+              src="/logos/dept-white.svg"
               alt="Logo"
               width={88}
               height={25}

@@ -1,12 +1,12 @@
 "use client";
 import Link from "next/link";
-import { EllipsisHorizontalIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import Logo from "./logo";
 import ExpandedMenu from "./expanded-menu";
 import "./styles.css";
 import { mainMenuRoutes, routeLabels } from "@/constants";
 import IconButton from "@/components/ui/icon-button";
+import Image from "next/image";
 
 const selectedRoutes = [
   routeLabels.WORK,
@@ -35,8 +35,8 @@ export default function Navbar() {
   return (
     <nav className="nav-padding contrast-section">
       <div className="flex items-center justify-between">
-        <Logo src="/logo-white.svg" className="hidden lg:block" />
-        <Logo src="/logo-black.svg" className="lg:hidden" />
+        <Logo src="/logos/dept-white.svg" className="hidden lg:block" />
+        <Logo src="/logos/dept-black.svg" className="lg:hidden" />
 
         <div className="hidden lg:flex gap-12 flex-row items-center">
           {shownRoutes.map(({ label, route }) => (
@@ -49,7 +49,13 @@ export default function Navbar() {
             </Link>
           ))}
           <IconButton handleOnClick={openMenu}>
-            <EllipsisHorizontalIcon className="size-8 cursor-pointer" />
+            <Image
+              src="/icons/more.svg"
+              alt=""
+              width={30}
+              height={8}
+              className="w-auto h-auto"
+            />
           </IconButton>
         </div>
         <div className="lg:hidden uppercase" onClick={openMenu}>
